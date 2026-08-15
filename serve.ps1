@@ -14,6 +14,7 @@ $mime = @{
   ".jpeg" = "image/jpeg"
   ".webp" = "image/webp"
   ".svg"  = "image/svg+xml"
+  ".mp4"  = "video/mp4"
 }
 
 while ($listener.IsListening) {
