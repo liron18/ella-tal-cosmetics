@@ -215,6 +215,52 @@ nav.links a:hover{ color: var(--rose); }
   grid-template-columns: repeat(3, 1fr);
   gap: 26px;
 }
+
+/* ---------- tabs ---------- */
+.tabs-nav{
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 4px 4px 14px;
+  margin-bottom: 22px;
+  scroll-snap-type: x proximity;
+  scrollbar-width: none;
+}
+.tabs-nav::-webkit-scrollbar{ display: none; }
+.tab-btn{
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  white-space: nowrap;
+  padding: 12px 22px;
+  border-radius: 999px;
+  border: 1px solid var(--cream-deep);
+  background: var(--white);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 15px;
+  cursor: pointer;
+  transition: background .2s, color .2s, border-color .2s;
+}
+.tab-btn:hover{ border-color: var(--rose); }
+.tab-btn.active{
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--white);
+}
+.tab-panel{ display: none; }
+.tab-panel.active{ display: block; animation: tabIn .35s ease; }
+.tab-panel .service-card{
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  max-width: 900px;
+}
+.tab-panel .service-photo, .tab-panel .service-icon-wrap{ aspect-ratio: unset; height: 100%; min-height: 260px; }
+@keyframes tabIn{ from{ opacity: 0; transform: translateY(8px); } to{ opacity: 1; transform: translateY(0); } }
+@media (max-width: 640px){
+  .tab-panel .service-card{ grid-template-columns: 1fr; }
+  .tab-panel .service-photo, .tab-panel .service-icon-wrap{ min-height: 220px; }
+}
 .service-card{
   background: var(--white);
   border-radius: var(--radius);
@@ -249,6 +295,7 @@ nav.links a:hover{ color: var(--rose); }
 .service-body{ padding: 22px 22px 26px; }
 .service-body h3{ margin-bottom: 8px; }
 .service-body p{ color: var(--ink-soft); font-size: 15px; margin: 0; }
+.service-body p + p{ margin-top: 10px; }
 
 .advanced-tag{
   display: inline-block;
@@ -332,6 +379,21 @@ footer{ padding: 60px 0 26px; }
 }
 .footer-brand img{ height: 50px; margin-bottom: 12px; }
 .footer-brand p{ color: var(--ink-soft); font-size: 14px; max-width: 320px; }
+.social-links{ display: flex; align-items: center; gap: 12px; margin-top: 16px; }
+.social-icon{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid var(--cream-deep);
+  color: var(--ink);
+  transition: background .2s, color .2s, border-color .2s;
+}
+.social-icon svg{ width: 19px; height: 19px; }
+.social-icon:hover{ background: var(--rose); border-color: var(--rose); color: #fff; }
+.social-follow{ font-size: 13px; color: var(--ink-soft); }
 .footer-links h4{ font-size: 15px; margin-bottom: 14px; }
 .footer-links li{ margin-bottom: 10px; }
 .footer-links a{ color: var(--ink-soft); font-size: 14px; }
