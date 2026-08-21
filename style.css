@@ -463,7 +463,16 @@ footer{ padding: 60px 0 26px; }
   section{ padding: 60px 0; }
   .hero{ padding: 32px 0 20px; }
   .hero-image{ max-width: 170px; }
-  .hero-badge{ font-size: 12px; padding: 10px 12px; }
+  .hero-badge{
+    font-size: 10px;
+    padding: 7px 8px;
+    gap: 5px;
+    white-space: nowrap;
+    bottom: 10px;
+    right: 8px;
+    left: 8px;
+  }
+  .hero-badge .stars{ letter-spacing: 0; }
   .tab-btn{ padding: 8px 14px; font-size: 13px; }
   .tabs-nav{ gap: 6px; }
 }
