@@ -44,6 +44,8 @@ h1, h2, h3{
   font-weight: 600;
   color: var(--ink);
   margin: 0 0 14px;
+  font-variant-numeric: lining-nums;
+  font-feature-settings: "lnum" 1;
 }
 
 h2{ font-size: clamp(28px, 4vw, 42px); }
