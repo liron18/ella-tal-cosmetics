@@ -25,4 +25,28 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { threshold: 0.12 });
 
   revealEls.forEach(el => observer.observe(el));
+
+  document.querySelectorAll('[data-tabs]').forEach(wrap => {
+    const btns = wrap.querySelectorAll('.tab-btn');
+    const panels = wrap.querySelectorAll('.tab-panel');
+
+    btns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        btns.forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected', 'false'); });
+        panels.forEach(p => p.classList.remove('active'));
+
+        btn.classList.add('active');
+        btn.setAttribute('aria-selected', 'true');
+
+        const target = wrap.querySelector('.tab-panel[data-panel="' + btn.dataset.tab + '"]');
+        if (target){
+          target.classList.add('active');
+          const vid = target.querySelector('video');
+          if (vid) vid.pause();
+        }
+
+        btn.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+      });
+    });
+  });
 });
