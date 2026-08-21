@@ -168,8 +168,9 @@ nav.links a:hover{ color: var(--rose); }
 .hero-actions{ display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 36px; }
 .hero-stats{ display: flex; gap: 34px; flex-wrap: wrap; }
 .hero-stats .stat b{
-  font-family: var(--serif);
-  font-size: 30px;
+  font-family: var(--sans);
+  font-size: 28px;
+  font-weight: 700;
   color: var(--rose);
   display: block;
 }
@@ -360,8 +361,8 @@ nav.links a:hover{ color: var(--rose); }
   gap: 14px;
 }
 .stat-card .num{
-  font-family: var(--serif);
-  font-size: 40px;
+  font-family: var(--sans);
+  font-size: 36px;
   color: var(--rose);
   font-weight: 700;
 }
