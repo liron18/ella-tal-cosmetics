@@ -226,6 +226,9 @@ nav.links a:hover{ color: var(--rose); }
 }
 .service-card:hover{ transform: translateY(-6px); box-shadow: var(--shadow); }
 .service-photo{ aspect-ratio: 4/3; overflow: hidden; background: var(--blush); position: relative; }
+@media (min-width: 721px){
+  .service-photo{ aspect-ratio: 16/9; }
+}
 .service-photo img, .service-photo video{ width: 100%; height: 100%; object-fit: contain; }
 .video-frame{ background: #000; }
 .video-frame .video-bg{
